@@ -1,0 +1,99 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-05_17-33-50",
+            "content": "@@ -1,658 +0,0 @@\n-from abc import ABC, abstractmethod%0A%0Aclass Pagamento(ABC):%0A    def __init__(self, valor:int, descricao: str):%0A        self.valor: float = valor%0A        self.descricao: str = descricao%0A%0A%0A    def resumo(self) -%3E str:%0A        print(f%22Pagamento de R$%7Bself.valor%7D: %7Bself.descricao%7D%22)%0A%0A    def validarValor(self) -%3E bool:%0A        if self.valor %3C= 0:%0A            return False%0A        return True%0A    %0A    @abstractmethod%0A    def Processar():%0A        pass%0A    %0Aclass Pix(Pagamento):%0A    def __init__(self, valor, descricao, chave: str, banco: str):%0A        super().__init__(valor, descricao)%0A        self.chave = chave%0A        self.banco = banco%0A%0A    %0A%0A            %0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-12-05_18-48-19",
+            "content": "@@ -104,13 +104,8 @@\n  str\n- = %22%22\n ):%0A \n@@ -636,282 +636,8 @@\n co%0A%0A\n-    def Processar(self):%0A        if self.valor.validarValor():%0A            print(f%22PIX enviado via %7Bself.banco%7D usando chave %7Bself.chave%7D%22)%0A        else:%0A            print(f%22PIX n%C3%A3o enviado via %7Bself.banco%7D usando chave %7Bself.chave%7D%22)%0A%0A%0A%0APix(0,%22%22,%22will@gamil.com%22,%22NuBank%22)%0A\n     \n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-12-05_18-55-20",
+            "content": "@@ -883,9 +883,9 @@\n Pix(\n-5\n+0\n ,%22%22,\n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-12-05_18-55-39",
+            "content": "@@ -879,14 +879,8 @@\n %0A%0A%0A%0A\n-pix = \n Pix(\n@@ -915,25 +915,8 @@\n k%22)%0A\n-pix.Processar()%0A%0A\n     \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-12-05_18-56-11",
+            "content": "@@ -678,16 +678,22 @@\n if self.\n+valor.\n validarV\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-12-05_18-57-12",
+            "content": "@@ -895,10 +895,10 @@\n ll@g\n-m\n a\n+m\n il.c\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-12-05_18-57-21",
+            "content": "@@ -879,17 +879,17 @@\n x = Pix(\n-0\n+5\n ,%22%22,%22wil\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-12-05_18-57-29",
+            "content": "@@ -96,24 +96,29 @@\n scricao: str\n+ = %22%22\n ):%0A        s\n@@ -718,50 +718,8 @@\n t(f%22\n-Pagamento de R$ 150.0: Camisa esportiva %5Cn\n PIX \n@@ -873,445 +873,8 @@\n %0A%0A%0A%0A\n-%0Aclass Credito(Pagamento):%0A    def __init__(self, valor, descricao, numero: int, titular: str, limite: int):%0A        super().__init__(valor, descricao)%0A        self.numero = numero%0A        self.titular = titular%0A        self.limite = limite%0A%0A    def Processar(self):%0A        if self.validarValor():%0A            if self.valor %3E self.limite:%0A                print(f%22Pagamento aprovado no cart%C3%A3o Cliente X. Limite restante: 100%22)%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A\n pix \n@@ -886,13 +886,8 @@\n (0,%22\n-blusa\n %22,%22w\n",
+            "lines": "40"
+        },
+        {
+            "label": "2025-12-05_19-09-29",
+            "content": "@@ -1353,17 +1353,17 @@\n x = Pix(\n-5\n+0\n ,%22blusa%22\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-12-05_19-09-41",
+            "content": "@@ -846,50 +846,8 @@\n t(f%22\n-Pagamento de R$ 150.0: Camisa esportiva %5Cn\n PIX \n@@ -1353,17 +1353,17 @@\n x = Pix(\n-0\n+5\n ,%22blusa%22\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-12-05_19-10-11",
+            "content": "@@ -721,36 +721,29 @@\n mento de R$ \n-%7Bself.valor%7D\n+150.0\n : Camisa esp\n@@ -858,28 +858,21 @@\n o de R$ \n-%7Bself.valor%7D\n+150.0\n : Camisa\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-12-05_19-11-04",
+            "content": "@@ -1413,9 +1413,9 @@\n Pix(\n-5\n+0\n ,%22bl\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-12-05_19-11-15",
+            "content": "@@ -739,32 +739,32 @@\n valor%7D: \n-%7Bself.descricao%7D\n+Camisa esportiva\n  %5CnPIX e\n@@ -879,32 +879,32 @@\n valor%7D: \n-%7Bself.descricao%7D\n+Camisa esportiva\n  %5CnPIX n\n@@ -1340,57 +1340,8 @@\n nto \n-de R$ %7Bself.valor%7D: Camisa esportiva %5CnPagamento \n apro\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-12-05_19-12-31",
+            "content": "@@ -1360,286 +1360,24 @@\n r%7D: \n-%7Bself.descricao%7D %5CnPagamento reprovado no cart%C3%A3o Cliente %7Bself.titular%7D. Limite restante: %7Bself.limite%7D%22)%0A                return%0A            restante = self.valor - self.limite%0A            self.limite = restante%0A            print(f%22Pagamento de R$ %7Bself.valor%7D: %7Bself.descricao%7D\n+Camisa esportiva\n  %5CnP\n@@ -1416,22 +1416,9 @@\n nte \n-%7Bself.titular%7D\n+X\n . Li\n@@ -1436,21 +1436,11 @@\n te: \n-%7Bself.limite%7D\n+100\n %22)%0A%0A\n@@ -1458,36 +1458,47 @@\n x = \n-Credito(100,66000,%22Jose%22,200\n+Pix(5,%22blusa%22,%22will@gmail.com%22,%22NuBank%22\n )%0Api\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-12-05_19-21-38",
+            "content": "@@ -1755,16 +1755,8 @@\n 100,\n-%22Blusa%22,\n 6600\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-12-05_19-22-11",
+            "content": "@@ -1287,18 +1287,17 @@\n f.valor \n-%3C=\n+%3E\n  self.li\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-12-05_19-23-59",
+            "content": "@@ -1291,113 +1291,23 @@\n lor \n-%3E self.limite:%0A                restante = self.valor - self.limite%0A                self.limite = restante\n+%3C= self.limite:\n %0A   \n@@ -1386,17 +1386,18 @@\n gamento \n-a\n+re\n provado \n@@ -1486,16 +1486,99 @@\n  return%0A\n+            restante = self.valor - self.limite%0A            self.limite = restante%0A\n         \n@@ -1640,34 +1640,33 @@\n ao%7D %5CnPagamento \n-re\n+a\n provado no cart%C3%A3\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-12-05_19-25-32",
+            "content": "@@ -1302,16 +1302,107 @@\n limite:%0A\n+                restante = self.valor - self.limite%0A                self.limite = restante%0A\n         \n@@ -1476,18 +1476,17 @@\n gamento \n-re\n+a\n provado \n@@ -1568,109 +1568,19 @@\n     \n-else:%0A                restante = self.valor - self.limite%0A                self.limite = restante%0A    \n+    return%0A\n     \n@@ -1646,33 +1646,34 @@\n ao%7D %5CnPagamento \n-a\n+re\n provado no cart%C3%A3\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-12-05_19-27-20",
+            "content": "from abc import ABC, abstractmethod\n\nclass Pagamento(ABC):\n    def __init__(self, valor:int, descricao: str):\n        self.valor: float = valor\n        self.descricao: str = descricao\n\n\n    def resumo(self) -> str:\n        print(f\"Pagamento de R${self.valor}: {self.descricao}\")\n\n    def validarValor(self) -> bool:\n        if self.valor <= 0:\n            return False\n        return True\n    \n    @abstractmethod\n    def Processar():\n        pass\n    \nclass Pix(Pagamento):\n    def __init__(self, valor, descricao, chave: str, banco: str):\n        super().__init__(valor, descricao)\n        self.chave = chave\n        self.banco = banco\n\n    def Processar(self):\n        if self.validarValor():\n            print(f\"Pagamento de R$ {self.valor}: {self.descricao} \\nPIX enviado via {self.banco} usando chave {self.chave}\")\n        else:\n            print(f\"Pagamento de R$ {self.valor}: {self.descricao} \\nPIX n\u00e3o enviado via {self.banco} usando chave {self.chave}\")\n\n\n\n\nclass Credito(Pagamento):\n    def __init__(self, valor, descricao, numero: int, titular: str, limite: int):\n        super().__init__(valor, descricao)\n        self.numero = numero\n        self.titular = titular\n        self.limite = limite\n\n    def Processar(self):\n        if self.validarValor():\n            if self.valor > self.limite:\n                print(f\"Pagamento de R$ {self.valor}: {self.descricao} \\nPagamento reprovado no cart\u00e3o Cliente {self.titular}. Limite restante: {self.limite}\")\n            else:\n                restante = self.valor - self.limite\n                self.limite = restante\n                print(f\"Pagamento de R$ {self.valor}: {self.descricao} \\nPagamento aprovado no cart\u00e3o Cliente {self.titular}. Limite restante: {self.limite}\")\n\n\n\n\n\n\n\n\n\n\npix = Credito(100,\"Blusa\",66000,\"Jose\",200)\npix.Processar()\n\n    \n\n            \n",
+            "lines": "66"
+        }
+    ]
+}

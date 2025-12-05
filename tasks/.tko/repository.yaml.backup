@@ -18,12 +18,13 @@ sources:
 expanded:
 - poo@campanha-principal
 - poo@bloco_f-herança-i
-tasks: {}
+tasks:
+  poo@zoo: '{rate:100, guide:videoaula, alone:10, study:90}'
 flags:
   quests: 0
   tracks: 0
   tasks: 0
-  graph: 0
+  graph: 1
   xray: 0
 lang: py
-selected: poo@zoo
+selected: poo@pagamento
