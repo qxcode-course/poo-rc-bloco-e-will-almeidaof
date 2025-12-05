@@ -2,8 +2,93 @@
     "patches": [
         {
             "label": "2025-12-05_13-48-38",
-            "content": "",
+            "content": "@@ -1,1452 +0,0 @@\n-from abc import ABC, abstractmethod%0A%0Aclass Animal(ABC):%0A    def __init__(self, name: str)%0A        self.name = name%0A        pass%0A%0A    def apresentarNome(self):%0A        print(f%22eu sou um(a) %7Bself.name%7D%22)%0A        pass%0A%0A    @abstractmethod%0A    def fazer_som(self):%0A        print(%22auuuu%22)%0A        pass%0A%0A    @abstractmethod%0A    def mover(self):%0A        print(%22inhec%22)%0A        pass%0A%0A%0Aclass Le%C3%A3o(Animal):%0A    def __init__(self, name: str):%0A        super().__init__(name)%0A%0A    def apresentarNome(self):%0A        return super().apresentarNome()%0A    %0A    def fazer_som(self):%0A        return super().fazer_som()%0A    %0A    def mover(self):%0A        return super().mover()%0A    %0Aclass Girafa(Animal):%0A    def __init__(self, name: str):%0A        super().__init__(name)%0A%0A    def apresentarNome(self):%0A        return super().apresentarNome()%0A    %0A    def fazer_som(self):%0A        return super().fazer_som()%0A    %0A    def mover(self):%0A        return super().mover()%0A    %0A%0A%0Aclass Macaco(Animal):%0A    def __init__(self, name: str):%0A        super().__init__(name)%0A%0A    def apresentarNome(self):%0A        return super().apresentarNome()%0A    %0A    def fazer_som(self):%0A        return super().fazer_som()%0A    %0A    def mover(self):%0A        return super().mover()%0A    %0Adef Apresentar(animal: Animal):%0A    animal.apresentarNome()%0A    animal.fazer_som()%0A    animal.mover%0A%0Aanimais: list%5BAnimal%5D = %5BLe%C3%A3o(toto), Girafa(Gloria), Macaco(bob)%5D%0Afor animal in animais:%0A    Apresentar(animal)%0A    \n",
             "lines": "0"
+        },
+        {
+            "label": "2025-12-05_17-02-26",
+            "content": "@@ -74,33 +74,32 @@\n self, name: str)\n-:\n %0A        self.na\n@@ -1441,8 +1441,12 @@\n animal)%0A\n+    \n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-12-05_17-02-46",
+            "content": "@@ -1364,14 +1364,12 @@\n e%C3%A3o(\n-%22\n toto\n-%22\n ), G\n@@ -1378,16 +1378,14 @@\n afa(\n-%22\n Gloria\n-%22\n ), M\n@@ -1394,13 +1394,11 @@\n aco(\n-%22\n bob\n-%22\n )%5D%0Af\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-12-05_17-03-04",
+            "content": "@@ -1328,18 +1328,16 @@\n al.mover\n-()\n %0A%0Aanimai\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-12-05_17-03-15",
+            "content": "@@ -1144,20 +1144,33 @@\n     \n-print(%22nhic%22\n+return super().fazer_som(\n )%0A  \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-12-05_17-05-34",
+            "content": "@@ -856,21 +856,33 @@\n     \n-print(%22uuuin%22\n+return super().fazer_som(\n )%0A  \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-12-05_17-06-00",
+            "content": "@@ -570,23 +570,33 @@\n     \n-print(%22waaarhh%22\n+return super().fazer_som(\n )%0A  \n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-12-05_17-06-25",
+            "content": "@@ -176,17 +176,18 @@\n %22eu sou \n-o\n+um\n (a) %7Bsel\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-12-05_17-06-41",
+            "content": "@@ -1298,62 +1298,8 @@\n er()\n-%0A    tipo = type(animal).__name__%0A    print(f%22%7Btipo%7D%22)\n %0A%0Aan\n",
+            "lines": "71"
+        },
+        {
+            "label": "2025-12-05_17-11-55",
+            "content": "@@ -1338,37 +1338,25 @@\n   print(\n-type(animal).__name__\n+f%22%7Btipo%7D%22\n )%0A%0Aanima\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-12-05_17-12-31",
+            "content": "@@ -1291,24 +1291,57 @@\n mal.mover()%0A\n+    tipo = type(animal).__name__%0A\n     print(ty\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-12-05_17-12-38",
+            "content": "@@ -1333,30 +1333,8 @@\n _)%0A%0A\n-def main():%0A    lista_\n anim\n@@ -1358,525 +1358,97 @@\n  = %5B\n-%5D%0A    while True:%0A        line = input()%0A        print(%22$%22+line)%0A        args = line.split()%0A        if args%5B0%5D == %22end%22:%0A            break%0A        if args%5B0%5D == %22criar%22:%0A            tipo = args%5B1%5D%0A            name = args%5B2%5D%0A            if tipo == %22leao%22:%0A                animal = Le%C3%A3o(name)%0A            elif tipo == %22girafa%22:%0A                animal = Girafa(name)%0A            elif tipo == %22macaco%22:%0A                animal = Macaco(name)%0A            else:%0A                print(%22fail: tipo invalido%22)%0A            %0A%0Amain()\n+Le%C3%A3o(%22toto%22), Girafa(%22Gloria%22), Macaco(%22bob%22)%5D%0Afor animal in animais:%0A    Apresentar(animal)%0A\n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-12-05_17-20-27",
+            "content": "@@ -1894,39 +1894,9 @@\n    %0A\n-if __name__ == %22__main__%22:%0A    \n+%0A\n main\n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-12-05_17-22-15",
+            "content": "@@ -1524,18 +1524,16 @@\n         \n-el\n if args%5B\n@@ -1881,68 +1881,8 @@\n o%22)%0A\n-%0A        else:%0A            print(%22fail: comando invalido%22)%0A%0A\n     \n",
+            "lines": "91"
+        },
+        {
+            "label": "2025-12-05_17-23-41",
+            "content": "@@ -1398,26 +1398,8 @@\n ue:%0A\n-        try:%0A%0A    \n     \n@@ -1413,28 +1413,24 @@\n e = input()%0A\n-    \n         prin\n@@ -1449,20 +1449,16 @@\n         \n-  \n-  \n args = l\n@@ -1465,28 +1465,24 @@\n ine.split()%0A\n-    \n         if a\n@@ -1514,22 +1514,14 @@\n     \n- \n-   \n break%0A\n-    \n     \n@@ -1561,20 +1561,16 @@\n         \n- \n-   \n tipo = a\n@@ -1576,20 +1576,16 @@\n args%5B1%5D%0A\n-    \n         \n@@ -1615,20 +1615,16 @@\n         \n- \n-   \n if tipo \n@@ -1630,28 +1630,24 @@\n  == %22leao%22:%0A\n-    \n             \n@@ -1674,36 +1674,32 @@\n me)%0A            \n- \n-   \n elif tipo == %22gi\n@@ -1705,20 +1705,16 @@\n irafa%22:%0A\n-    \n         \n@@ -1747,36 +1747,32 @@\n me)%0A            \n-    \n elif tipo == %22ma\n@@ -1774,28 +1774,24 @@\n = %22macaco%22:%0A\n-    \n             \n@@ -1832,22 +1832,14 @@\n     \n-    \n else:%0A\n-    \n     \n@@ -1879,16 +1879,17 @@\n alido%22)%0A\n+%0A\n         \n@@ -1893,27 +1893,10 @@\n    e\n-xcept Exception as \n+ls\n e:%0A \n@@ -1912,17 +1912,40 @@\n   print(\n-e\n+%22fail: comando invalido%22\n )%0A%0A     \n",
+            "lines": "95"
+        },
+        {
+            "label": "2025-12-05_17-24-57",
+            "content": "@@ -1977,15 +1977,16 @@\n pt E\n-OFError\n+xception\n  as \n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-12-05_17-26-35",
+            "content": "@@ -1329,16 +1329,38 @@\n ame__)%0A%0A\n+def main():%0A    lista_\n animais:\n@@ -1380,97 +1380,687 @@\n  = %5B\n-Le%C3%A3o(%22toto%22), Girafa(%22Gloria%22), Macaco(%22bob%22)%5D%0Afor animal in animais:%0A    Apresentar(animal)%0A\n+%5D%0A    while True:%0A        try:%0A%0A            line = input()%0A            print(%22$%22+line)%0A            args = line.split()%0A            if args%5B0%5D == %22end%22:%0A                break%0A            elif args%5B0%5D == %22criar%22:%0A                tipo = args%5B1%5D%0A                name = args%5B2%5D%0A                if tipo == %22leao%22:%0A                    animal = Le%C3%A3o(name)%0A                elif tipo == %22girafa%22:%0A                    animal = Girafa(name)%0A                elif tipo == %22macaco%22:%0A                    animal = Macaco(name)%0A                else:%0A                    print(%22fail: tipo invalido%22)%0A        except EOFError as e:%0A            print(e)%0A%0A            %0Aif __name__ == %22__main__%22:%0A    main()\n",
+            "lines": "96"
+        },
+        {
+            "label": "2025-12-05_17-27-14",
+            "content": "from abc import ABC, abstractmethod\n\nclass Animal(ABC):\n    def __init__(self, name: str):\n        self.name = name\n        pass\n\n    def apresentarNome(self):\n        print(f\"eu sou o(a) {self.name}\")\n        pass\n\n    @abstractmethod\n    def fazer_som(self):\n        print(\"auuuu\")\n        pass\n\n    @abstractmethod\n    def mover(self):\n        print(\"inhec\")\n        pass\n\n\nclass Le\u00e3o(Animal):\n    def __init__(self, name: str):\n        super().__init__(name)\n\n    def apresentarNome(self):\n        return super().apresentarNome()\n    \n    def fazer_som(self):\n        print(\"waaarhh\")\n    \n    def mover(self):\n        return super().mover()\n    \nclass Girafa(Animal):\n    def __init__(self, name: str):\n        super().__init__(name)\n\n    def apresentarNome(self):\n        return super().apresentarNome()\n    \n    def fazer_som(self):\n        print(\"uuuin\")\n    \n    def mover(self):\n        return super().mover()\n    \n\n\nclass Macaco(Animal):\n    def __init__(self, name: str):\n        super().__init__(name)\n\n    def apresentarNome(self):\n        return super().apresentarNome()\n    \n    def fazer_som(self):\n        print(\"nhic\")\n    \n    def mover(self):\n        return super().mover()\n    \ndef Apresentar(animal: Animal):\n    animal.apresentarNome()\n    animal.fazer_som()\n    animal.mover()\n    print(type(animal).__name__)\n\nanimais: list[Animal] = [Le\u00e3o(\"toto\"), Girafa(\"Gloria\"), Macaco(\"bob\")]\nfor animal in animais:\n    Apresentar(animal)\n",
+            "lines": "72"
         }
     ]
 }
