@@ -1,0 +1,144 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-06_13-03-38",
+            "content": "@@ -1,443 +0,0 @@\n-from abc import ABC, abstractmethod%0A%0Aclass Shape(ABC):%0A    def getArea(self):%0A        return self.area%0A    %0A    def get_perimeter(self):%0A        return self.perimeter%0A    %0A    def getName(self):%0A        return self.name%0A    %0Aclass Point2d:%0A    def __init__(self, x: float, y: float):%0A        self.x = x%0A        self.y = y %0A%0A    def __str__(self):%0A        return f%22%7Bself.x%7D, %7Bself.y%7D%22%0A    %0Aquadrado = Point2d(2.40, 3.55)%0Aprint(quadrado)%0A    %0A%0A%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-12-06_13-42-01",
+            "content": "@@ -48,36 +48,16 @@\n e(ABC):%0A\n-    @abstractmethod%0A\n     def \n@@ -83,37 +83,29 @@\n     \n-pass%0A    %0A    @abstractmethod\n+return self.area%0A    \n %0A   \n@@ -142,37 +142,34 @@\n     \n-pass%0A    %0A    @abstractmethod\n+return self.perimeter%0A    \n %0A   \n@@ -200,12 +200,24 @@\n     \n-pass\n+return self.name\n %0A   \n@@ -386,332 +386,58 @@\n    %0A\n-    %0Aclass Circle(Shape):%0A    def __init__(self, point2d: Point2d, r: float):%0A        self.center = point2d%0A        self.radius = r%0A%0A    def getName(self):%0A        return %22Circ%22%0A    %0A    def get_perimeter(self):%0A        perimeter = 2*3.14*self.radius%0A        return perimeter%0A    %0Acircle = Circle(Point2d(3,5), 5)%0Acircle.getName\n+quadrado = Point2d(2.40, 3.55)%0Aprint(quadrado)%0A    %0A%0A%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-12-06_13-56-25",
+            "content": "@@ -725,12 +725,12 @@\n rcle.get\n-Area\n+Name\n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-12-06_13-57-42",
+            "content": "@@ -576,25 +576,14 @@\n urn \n-super().getName()\n+%22Circ%22\n %0A   \n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-12-06_13-58-15",
+            "content": "@@ -576,14 +576,25 @@\n urn \n-%22Circ%22\n+super().getName()\n %0A   \n@@ -697,89 +697,8 @@\n    %0A\n-    def getArea(self):%0A        area = 3.14*(self.radius**2)%0A        return area%0A%0A\n circ\n@@ -732,16 +732,16 @@\n )%0Acircle.get\n-Name\n+Area\n",
+            "lines": "38"
+        },
+        {
+            "label": "2025-12-06_14-00-06",
+            "content": "@@ -814,6 +814,4 @@\n Name\n-()\n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-12-06_14-00-24",
+            "content": "@@ -576,26 +576,14 @@\n urn \n-print(%22Circ%22)%0A    \n+%22Circ%22\n %0A   \n",
+            "lines": "42"
+        },
+        {
+            "label": "2025-12-06_14-00-41",
+            "content": "@@ -576,14 +576,21 @@\n urn \n+print(\n %22Circ%22\n+)\n %0A   \n@@ -779,474 +779,53 @@\n ea%0A%0A\n-def main():%0A    while True:%0A        try:%0A            line = input()%0A            print(%22$%22+line)%0A            args = line.split()%0A            if args%5B1%5D == %22end%22:%0A                break%0A            elif args%5B1%5D == %22circle%22:%0A                x = float(args%5B2%5D)%0A                y = float(args%5B3%5D)%0A                r = float(args%5B4%5D)%0A                center = Point2d(x,y)%0A                Circle(center,r)%0A            %0A        except Exception as e:%0A            print(e)%0A%0A%0Amain\n+circle = Circle(Point2d(3,5), 5)%0Acircle.getName\n ()\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-12-06_14-12-51",
+            "content": "@@ -920,9 +920,9 @@\n rgs%5B\n-0\n+1\n %5D ==\n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-12-06_14-14-15",
+            "content": "@@ -1,835 +1,94 @@\n-from abc import ABC, abstractmethod%0A%0Aclass Shape(ABC):%0A    @abstractmethod%0A    def getArea(self):%0A        pass%0A    %0A    @abstractmethod%0A    def get_perimeter(self):%0A        pass%0A    %0A    @abstractmethod%0A    def getName(self):%0A        pass%0A    %0Aclass Point2d:%0A    def __init__(self, x: float, y: float):%0A        self.x = x%0A        self.y = y %0A%0A    def __str__(self):%0A        return f%22%7Bself.x%7D, %7Bself.y%7D%22%0A    %0A    %0Aclass Circle(Shape):%0A    def __init__(self, point2d: Point2d, r: float):%0A        self.center = point2d%0A        self.radius = r%0A%0A    def getName(self):%0A        return %22Circ%22%0A    %0A    %0A    def get_perimeter(self):%0A        perimeter = 2*3.14*self.radius%0A        return perimeter%0A    %0A    def getArea(self):%0A        area = 3.14*(self.radius**2)%0A        return area%0A    %0A%0A    def %0A%0Adef main():%0A    while True:%0A        try:%0A\n+@@ -770,23 +770,8 @@%0A area%0A-%250A    %250A%250A    def %0A %250A%250Ade%0A@@ -813,39 +813,8 @@%0A ry:%250A%0A-\n     \n@@ -110,354 +110,321 @@\n list\n-%5B\n+%255B\n Shape\n-%5D%0A            line = input()%0A            print(%22$%22+line)%0A            args = line.split()%0A            if args%5B0%5D == %22end%22:%0A                break%0A            elif args%5B0%5D\n+%255D%250A%0A     %0A@@ -969,25 +969,25 @@%0A   elif args%255B%0A-0%0A+1%0A %255D\n  == \n-%22\n+%2522\n circle\n-%22:%0A                x = float(args%5B1%5D)%0A                y = float(args%5B2%5D)%0A                r = float(args%5B3%5D)%0A                center = Point2d(x,y)%0A          \n+%0A@@ -1020,17 +1020,17 @@%0A at(args%255B%0A-1%0A+2%0A %255D)%250A     %0A@@ -1047,33 +1047,33 @@%0A  y = float(args%255B%0A-2%0A+3%0A %255D)%250A             %0A@@ -1082,33 +1082,33 @@%0A  r = float(args%255B%0A-3%0A+4%0A %255D)%250A             %0A@@ -1151,17 +1151,8 @@%0A\n      \n+%0A-\n  cir\n@@ -432,26 +432,48 @@\n le =\n+%0A \n  Cir\n-cle(center,r)%0A\n+%0A@@ -1169,166 +1169,8 @@%0A ,r)%250A%0A-\n     \n@@ -504,18 +504,22 @@\n (circle)\n-%0A%0A\n+%250A%250A\n         \n@@ -535,23 +535,33 @@\n args\n-%5B0%5D\n+%255B0%255D\n  == \n-%22\n+%2522\n show\n-%22:%0A\n+%2522:%250A\n     \n@@ -591,17 +591,19 @@\n n lista:\n-%0A\n+%250A\n         \n@@ -630,93 +630,35 @@\n ape)\n-%0A%0A%0A     \n+%250A%250A%250A\n        \n-%0A\n      \n-       %0A        except Exception as e:%0A            print(e)%0A%0A%0Amain()\n+%250A%0A     %0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-12-06_14-17-26",
+            "content": "@@ -483,35 +483,8 @@\n t):%0A\n-        self.name = %22Circ%22%0A\n     \n@@ -572,25 +572,22 @@\n  return \n-self.name\n+%22Circ%22\n %0A    %0A  \n@@ -785,87 +785,8 @@\n def \n-__str__(self):%0A        return f%22%7Bself.name%7D: C=(%7Bself.center%7D),R=%7Bself.radius%7D%22\n %0A%0Ade\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-12-06_14-19-55",
+            "content": "@@ -967,13 +967,8 @@\n ape%5D\n- = %5B%5D\n %0A   \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-12-06_14-21-30",
+            "content": "@@ -912,60 +912,68 @@\n     \n-lista: list%5BShape%5D = %5B%5D%0A    while True:%0A        try:\n+while True:%0A        try:%0A            lista: list%5BShape%5D = %5B%5D\n %0A   \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-12-06_14-22-44",
+            "content": "@@ -871,19 +871,16 @@\n f.center\n-:02\n %7D),R=%7Bse\n@@ -892,11 +892,8 @@\n dius\n-:02\n %7D%22%0A%0A\n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-12-06_14-23-34",
+            "content": "@@ -871,16 +871,19 @@\n f.center\n+:02\n %7D),R=%7Bse\n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-12-06_14-23-43",
+            "content": "@@ -888,16 +888,19 @@\n f.radius\n+:02\n %7D%22%0A%0Adef \n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-12-06_14-23-53",
+            "content": "@@ -892,12 +892,8 @@\n dius\n-:.2f\n %7D%22%0A%0A\n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-12-06_14-25-41",
+            "content": "@@ -383,20 +383,16 @@\n %22%7Bself.x\n-:.2f\n %7D, %7Bself\n@@ -393,20 +393,16 @@\n  %7Bself.y\n-:.2f\n %7D%22%0A    %0A\n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-12-06_14-26-07",
+            "content": "@@ -882,17 +882,16 @@\n enter%7D),\n- \n R=%7Bself.\n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-12-06_14-26-19",
+            "content": "@@ -907,629 +907,8 @@\n 2f%7D%22\n-%0A    %0A%0A%0Aclass Rectangle(Shape):%0A    def __init__(self, p1: Point2d, p2: Point2d):%0A        self.name = %22Rect%22%0A        self.p1 = p1%0A        self.p2 = p2%0A%0A    def getName(self):%0A        return self.name%0A    %0A    def getArea(self):%0A        largura = self.p1.x - self.p2.x%0A        altura = self.p1.y - self.p2.y%0A        area = largura*altura%0A        return area%0A    %0A    def get_perimeter(self):%0A        largura = self.p1.x - self.p2.x%0A        altura = self.p1.y - self.p2.y%0A        perimeter = 2*(largura+altura)%0A        return perimeter%0A    %0A    def __str__(self):%0A        return f%22%7Bself.name%7D: P1=(%7Bself.p1%7D), P2=%7Bself.p2%7D%22\n %0A%0Ade\n",
+            "lines": "75"
+        },
+        {
+            "label": "2025-12-06_14-44-43",
+            "content": "@@ -2002,242 +2002,8 @@\n e)%0A%0A\n-            elif args%5B0%5D == %22rect%22:%0A                p1 = Point2d(float(args%5B1%5D, float(args%5B2%5D)))%0A                p2 = Point2d(float(args%5B3%5D), float(args%5B4%5D))%0A                rect = Rectangle(p1,p2)%0A                lista.append(rect)%0A%0A\n     \n",
+            "lines": "101"
+        },
+        {
+            "label": "2025-12-06_14-48-22",
+            "content": "@@ -2076,17 +2076,16 @@\n (args%5B1%5D\n-)\n , float(\n@@ -2093,16 +2093,17 @@\n rgs%5B2%5D))\n+)\n %0A       \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-12-06_14-50-34",
+            "content": "@@ -1509,16 +1509,17 @@\n elf.p1%7D)\n+,\n  P2=%7Bsel\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-12-06_14-50-53",
+            "content": "@@ -1513,17 +1513,16 @@\n p1%7D) P2=\n-(\n %7Bself.p2\n@@ -1522,17 +1522,16 @@\n self.p2%7D\n-)\n %22%0A%0Adef m\n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-12-06_14-51-05",
+            "content": "@@ -1529,175 +1529,8 @@\n 2%7D)%22\n-%0A    %0A%0Adef info(shape: Shape):%0A    name = shape.getName()%0A    area = shape.getArea()%0A    perimeter = shape.get_perimeter()%0A    return f%22%7Bname%7D: A=%7Barea%7D P=%7Bperimeter%7D%22\n %0A%0Ade\n@@ -2237,121 +2237,8 @@\n t)%0A%0A\n-%0A            elif args%5B0%5D == %22info%22:%0A                for shape in lista:%0A                    print(info(shape))%0A%0A\n     \n",
+            "lines": "107"
+        },
+        {
+            "label": "2025-12-06_15-03-00",
+            "content": "@@ -1676,20 +1676,16 @@\n  A=%7Barea\n-:.2f\n %7D P=%7Bper\n@@ -1690,20 +1690,16 @@\n erimeter\n-:.2f\n %7D%22%0A%0Adef \n",
+            "lines": "119"
+        },
+        {
+            "label": "2025-12-06_15-03-36",
+            "content": "@@ -1400,33 +1400,23 @@\n  2*(\n-abs(\n largura\n-)\n +\n-abs(\n altura)\n-)\n %0A   \n",
+            "lines": "119"
+        },
+        {
+            "label": "2025-12-06_15-06-32",
+            "content": "from abc import ABC, abstractmethod\n\nclass Shape(ABC):\n    @abstractmethod\n    def getArea(self):\n        pass\n    \n    @abstractmethod\n    def get_perimeter(self):\n        pass\n    \n    @abstractmethod\n    def getName(self):\n        pass\n    \nclass Point2d:\n    def __init__(self, x: float, y: float):\n        self.x = x\n        self.y = y \n\n    def __str__(self):\n        return f\"{self.x:.2f}, {self.y:.2f}\"\n    \n    \nclass Circle(Shape):\n    def __init__(self, point2d: Point2d, r: float):\n        self.name = \"Circ\"\n        self.center = point2d\n        self.radius = r\n\n    def getName(self):\n        return self.name\n    \n    \n    def get_perimeter(self):\n        perimeter = 2*3.14*self.radius\n        return perimeter\n    \n    def getArea(self):\n        area = 3.14*(self.radius**2)\n        return area\n    \n\n    def __str__(self):\n        return f\"{self.name}: C=({self.center}), R={self.radius:.2f}\"\n    \n\n\nclass Rectangle(Shape):\n    def __init__(self, p1: Point2d, p2: Point2d):\n        self.name = \"Rect\"\n        self.p1 = p1\n        self.p2 = p2\n\n    def getName(self):\n        return self.name\n    \n    def getArea(self):\n        largura = self.p1.x - self.p2.x\n        altura = self.p1.y - self.p2.y\n        area = largura*altura\n        return area\n    \n    def get_perimeter(self):\n        largura = self.p1.x - self.p2.x\n        altura = self.p1.y - self.p2.y\n        perimeter = 2*(abs(largura)+abs(altura))\n        return perimeter\n    \n    def __str__(self):\n        return f\"{self.name}: P1=({self.p1}) P2=({self.p2})\"\n    \n\ndef info(shape: Shape):\n    name = shape.getName()\n    area = shape.getArea()\n    perimeter = shape.get_perimeter()\n    return f\"{name}: A={area:.2f} P={perimeter:.2f}\"\n\ndef main():\n    lista: list[Shape] = []\n    while True:\n        try:\n            line = input()\n            print(\"$\"+line)\n            args = line.split()\n            if args[0] == \"end\":\n                break\n            elif args[0] == \"circle\":\n                x = float(args[1])\n                y = float(args[2])\n                r = float(args[3])\n                center = Point2d(x,y)\n                circle = Circle(center,r)\n                lista.append(circle)\n\n            elif args[0] == \"rect\":\n                p1 = Point2d(float(args[1]), float(args[2]))\n                p2 = Point2d(float(args[3]), float(args[4]))\n                rect = Rectangle(p1,p2)\n                lista.append(rect)\n\n\n            elif args[0] == \"info\":\n                for shape in lista:\n                    print(info(shape))\n\n            elif args[0] == \"show\":\n                for shape in lista:\n                    print(shape)\n\n\n            \n            \n        except Exception as e:\n            print(e)\n\n\nmain()",
+            "lines": "119"
+        }
+    ]
+}
