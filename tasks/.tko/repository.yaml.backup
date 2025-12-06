@@ -21,7 +21,7 @@ expanded:
 tasks:
   poo@zoo: '{rate:100, guide:videoaula, alone:10, study:90}'
   poo@pagamento: '{rate:100, alone:10, study:240}'
-  poo@shapes: '{rate:80}'
+  poo@shapes: '{rate:100, human:professor, alone:10, study:180}'
 flags:
   quests: 0
   tracks: 0
