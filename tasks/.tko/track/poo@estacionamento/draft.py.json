@@ -2,8 +2,83 @@
     "patches": [
         {
             "label": "2025-12-10_08-40-35",
-            "content": "",
+            "content": "@@ -1,250 +0,0 @@\n-from abc import ABC, abstractmethod%0A%0Aclass Veiculo(ABC):%0A    def __init__(self, id: str, tipo: str, entrada: int):%0A        self.id = id%0A        self.tipo = tipo%0A        self.entrada = entrada%0A%0A    @abstractmethod%0A    def calcularValor():%0A        pass\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-12-10_10-46-31",
+            "content": "@@ -247,333 +247,4 @@\n pass\n-%0A%0A    def __str__(self):%0A        return f%22%7Bself.id%7D:%7Bself.tipo%7D:%7Bself.entrada%7D%22%0A    %0A%0Aclass Bike(Veiculo):%0A    def __init__(self, id, tipo, entrada):%0A        super().__init__(id, tipo, entrada)%0A%0A    def calcularValor() -%3E float:%0A        return 3.00%0A    %0A%0Abicicreta = Bike(%22doido%22,%22bicicreta%22, 20)%0Aprint(bicicreta.calcularValor())\n",
+            "lines": "11"
+        },
+        {
+            "label": "2025-12-10_11-00-07",
+            "content": "@@ -540,16 +540,22 @@\n a%22, 20)%0A\n+print(\n bicicret\n@@ -559,20 +559,21 @@\n reta.calcularValor()\n+)\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-12-10_11-00-24",
+            "content": "@@ -568,8 +568,5 @@\n lor(\n-250\n )\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-12-10_11-00-51",
+            "content": "@@ -552,21 +552,24 @@\n creta.calcularValor(\n+250\n )\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-12-10_11-01-06",
+            "content": "@@ -544,14 +544,8 @@\n 20)%0A\n-print(\n bici\n@@ -549,9 +549,24 @@\n icicreta\n+.calcularValor(\n )\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-12-10_11-01-35",
+            "content": "@@ -560,30 +560,4 @@\n eta)\n-%0Abicicreta.calcularValor()\n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-12-10_11-02-15",
+            "content": "@@ -460,20 +460,16 @@\n arValor(\n-self\n ) -%3E flo\n",
+            "lines": "27"
+        },
+        {
+            "label": "2025-12-10_11-02-40",
+            "content": "@@ -561,22 +561,16 @@\n icreta)%0A\n-print(\n bicicret\n@@ -586,9 +586,8 @@\n rValor()\n-)\n",
+            "lines": "27"
+        },
+        {
+            "label": "2025-12-10_11-02-53",
+            "content": "@@ -505,251 +505,83 @@\n    %0A\n-class Moto(Veiculo):%0A    def __init__(self, id, tipo, entrada):%0A        super().__init__(id, tipo, entrada)%0A%0A    def calcularValor(self):%0A        valor = self.entrada / 20%0A        return valor%0A    %0A%0Amoto = Moto(%22flsdhfl%22,%22wodja%22,20)%0Aprint(moto\n+%0Abicicreta = Bike(%22doido%22,%22bicicreta%22, 20)%0Aprint(bicicreta)%0Aprint(bicicreta\n .cal\n",
+            "lines": "27"
+        },
+        {
+            "label": "2025-12-10_11-06-49",
+            "content": "@@ -220,36 +220,32 @@\n f calcularValor(\n-self\n ):%0A        pass%0A\n@@ -704,301 +704,36 @@\n   %0A%0A\n-class Carro(Veiculo):%0A    def __init__(self, id, tipo, entrada):%0A        super().__init__(id, tipo, entrada)%0A%0A    def calcularValor(self):%0A        valor = self.entrada / 10%0A        if valor %3E5:%0A            return valor%0A        else:%0A            return 5%0A        %0Acarro = Carro(%22h\n+moto = Moto(%22fl\n sdh\n+f\n l\n-a\n %22,%22\n-jwkdaj\n+wodja\n %22,20\n@@ -744,12 +744,11 @@\n int(\n-carr\n+mot\n o.ca\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-12-10_11-10-49",
+            "content": "@@ -1003,9 +1003,9 @@\n aj%22,\n-7\n+2\n 0)%0Ap\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-12-10_11-11-02",
+            "content": "@@ -957,19 +957,16 @@\n return 5\n-.00\n %0A       \n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-12-10_11-11-09",
+            "content": "@@ -1002,17 +1002,17 @@\n jwkdaj%22,\n-5\n+7\n 0)%0Aprint\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-12-10_11-11-13",
+            "content": "@@ -1002,17 +1002,17 @@\n jwkdaj%22,\n-1\n+5\n 0)%0Aprint\n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-12-10_11-11-19",
+            "content": "from abc import ABC, abstractmethod\n\nclass Veiculo(ABC):\n    def __init__(self, id: str, tipo: str, entrada: int):\n        self.id = id\n        self.tipo = tipo\n        self.entrada = entrada\n\n    @abstractmethod\n    def calcularValor(self):\n        pass\n\n    def __str__(self):\n        return f\"{self.id}:{self.tipo}:{self.entrada}\"\n    \n\nclass Bike(Veiculo):\n    def __init__(self, id, tipo, entrada):\n        super().__init__(id, tipo, entrada)\n\n    def calcularValor(self) -> float:\n        return 3.00\n    \nclass Moto(Veiculo):\n    def __init__(self, id, tipo, entrada):\n        super().__init__(id, tipo, entrada)\n\n    def calcularValor(self):\n        valor = self.entrada / 20\n        return valor\n    \n\nclass Carro(Veiculo):\n    def __init__(self, id, tipo, entrada):\n        super().__init__(id, tipo, entrada)\n\n    def calcularValor(self):\n        valor = self.entrada / 10\n        if valor >5:\n            return valor\n        else:\n            return 5.00\n        \ncarro = Carro(\"hsdhla\",\"jwkdaj\",10)\nprint(carro.calcularValor())",
+            "lines": "45"
         }
     ]
 }
